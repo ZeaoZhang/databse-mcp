@@ -46,18 +46,18 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/mcp-database.git"
+    "url": "git+https://github.com/ZeaoZhang/databse-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/mcp-database/issues"
+    "url": "https://github.com/ZeaoZhang/databse-mcp/issues"
   },
-  "homepage": "https://github.com/yourusername/mcp-database#readme",
+  "homepage": "https://github.com/ZeaoZhang/databse-mcp#readme",
   "engines": {
     "node": ">=18.0.0"
   },
   "files": [
     "dist",
-    "binaries",
+    "scripts/postinstall.cjs",
     "README.md",
     "LICENSE"
   ],

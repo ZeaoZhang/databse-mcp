@@ -14,12 +14,12 @@ A Node.js MCP (Model Context Protocol) server that provides database operations 
 
 Install from npm and pick the bundle that fits your environment:
 
+- Core package (no bundled binaries, ~50KB): `npm install -g @adversity/mcp-database`
 - Platform-specific (includes binary for one OS/CPU, ~15MB):
   - macOS ARM64: `npm install -g @adversity/mcp-database-darwin-arm64`
   - macOS Intel: `npm install -g @adversity/mcp-database-darwin-x64`
   - Linux x64: `npm install -g @adversity/mcp-database-linux-x64`
   - Windows x64: `npm install -g @adversity/mcp-database-win32-x64`
-- Full bundle (all binaries, ~60MB): `npm install -g @adversity/mcp-database-full`
 - No install: `npx @adversity/mcp-database --help`
 
 ## Quick Start

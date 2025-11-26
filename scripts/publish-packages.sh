@@ -62,26 +62,10 @@ fi
 
 echo ""
 
-# 3. 发布 full 包
-echo "=== Publishing full package (@adversity/mcp-database-full) ==="
-cd "$PACKAGES_DIR/full"
-
-if [ ! -d "binaries" ]; then
-  echo "Warning: full package binaries not found, skipping..."
-else
-  if [ "$DRY_RUN" = "true" ]; then
-    npm publish --dry-run
-  else
-    npm publish --access public
-  fi
-fi
-
-echo ""
 echo "Done!"
 echo ""
 echo "Published packages:"
-echo "  - @adversity/mcp-database-full (core, ~50KB)"
-echo "  - @adversity/mcp-database-full (with all binaries, ~60MB)"
+echo "  - @adversity/mcp-database"
 for pkg_name in "${PLATFORMS[@]}"; do
-  echo "  - @adversity/mcp-database-$pkg_name (~15MB)"
+  echo "  - @adversity/mcp-database-$pkg_name"
 done
