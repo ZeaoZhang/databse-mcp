@@ -15,12 +15,12 @@ A Node.js MCP (Model Context Protocol) server that provides database operations 
 Install from npm and pick the bundle that fits your environment:
 
 - Platform-specific (includes binary for one OS/CPU, ~15MB):
-  - macOS ARM64: `npm install -g mcp-database @mcp-database/darwin-arm64`
-  - macOS Intel: `npm install -g mcp-database @mcp-database/darwin-x64`
-  - Linux x64: `npm install -g mcp-database @mcp-database/linux-x64`
-  - Windows x64: `npm install -g mcp-database @mcp-database/win32-x64`
-- Full bundle (all binaries, ~60MB): `npm install -g @mcp-database/full`
-- No install: `npx mcp-database --help`
+  - macOS ARM64: `npm install -g @adversity/mcp-database @adversity/mcp-database-darwin-arm64`
+  - macOS Intel: `npm install -g @adversity/mcp-database @adversity/mcp-database-darwin-x64`
+  - Linux x64: `npm install -g @adversity/mcp-database @adversity/mcp-database-linux-x64`
+  - Windows x64: `npm install -g @adversity/mcp-database @adversity/mcp-database-win32-x64`
+- Full bundle (all binaries, ~60MB): `npm install -g @adversity/mcp-database-full`
+- No install: `npx @adversity/mcp-database --help`
 
 ## Quick Start
 
@@ -34,25 +34,25 @@ POSTGRES_HOST=localhost \
 POSTGRES_DATABASE=mydb \
 POSTGRES_USER=user \
 POSTGRES_PASSWORD=password \
-npx mcp-database --prebuilt postgres
+npx @adversity/mcp-database --prebuilt postgres
 
 # MySQL
 MYSQL_HOST=localhost \
 MYSQL_DATABASE=mydb \
 MYSQL_USER=root \
 MYSQL_PASSWORD=password \
-npx mcp-database --prebuilt mysql
+npx @adversity/mcp-database --prebuilt mysql
 
 # SQLite (no credentials needed)
 SQLITE_DATABASE=./my-database.db \
-npx mcp-database --prebuilt sqlite
+npx @adversity/mcp-database --prebuilt sqlite
 
 # MongoDB
 MONGODB_HOST=localhost \
 MONGODB_DATABASE=mydb \
 MONGODB_USER=user \
 MONGODB_PASSWORD=password \
-npx mcp-database --prebuilt mongodb
+npx @adversity/mcp-database --prebuilt mongodb
 ```
 
 ### Using Custom Configuration
@@ -98,7 +98,7 @@ Add to your `.mcp.json` or `claude_desktop_config.json`:
   "mcpServers": {
     "database": {
       "command": "npx",
-      "args": ["mcp-database", "--prebuilt", "postgres"],
+      "args": ["@adversity/mcp-database", "--prebuilt", "postgres"],
       "env": {
         "POSTGRES_HOST": "localhost",
         "POSTGRES_PORT": "5432",
@@ -120,7 +120,7 @@ Create `.cursor/mcp.json`:
   "mcpServers": {
     "database": {
       "command": "npx",
-      "args": ["mcp-database", "--prebuilt", "mysql"],
+      "args": ["@adversity/mcp-database", "--prebuilt", "mysql"],
       "env": {
         "MYSQL_HOST": "localhost",
         "MYSQL_DATABASE": "mydb",
@@ -141,7 +141,7 @@ Create `.vscode/mcp.json`:
   "servers": {
     "database": {
       "command": "npx",
-      "args": ["mcp-database", "--prebuilt", "postgres"],
+      "args": ["@adversity/mcp-database", "--prebuilt", "postgres"],
       "env": {
         "POSTGRES_HOST": "localhost",
         "POSTGRES_DATABASE": "mydb"
@@ -273,7 +273,7 @@ PREBUILT TYPES:
 You can also use mcp-database programmatically:
 
 ```typescript
-import { startServer, generatePrebuiltConfig } from 'mcp-database';
+import { startServer, generatePrebuiltConfig } from '@adversity/mcp-database';
 
 const config = generatePrebuiltConfig('postgres');
 

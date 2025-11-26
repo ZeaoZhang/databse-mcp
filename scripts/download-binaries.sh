@@ -64,7 +64,7 @@ echo "Platform packages (for lightweight install):"
 for platform_info in "${PLATFORMS[@]}"; do
   IFS=':' read -r os arch pkg_name binary_name <<< "$platform_info"
   size=$(du -h "$PACKAGES_DIR/$pkg_name/bin/$binary_name" | cut -f1)
-  echo "  @mcp-database/$pkg_name: $size"
+  echo "  @adversity/mcp-database-$pkg_name: $size"
 done
 
 echo ""

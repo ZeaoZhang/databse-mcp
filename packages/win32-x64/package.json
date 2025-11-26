@@ -1,5 +1,5 @@
 {
-  "name": "@mcp-database/win32-x64",
+  "name": "@adversity/mcp-database-win32-x64",
   "version": "0.1.0",
   "description": "genai-toolbox binary for Windows x64",
   "os": ["win32"],
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/anthropics/mcp-database.git",
+    "url": "https://github.com/ZeaoZhang/databse-mcp.git",
     "directory": "packages/win32-x64"
   },
   "license": "MIT",

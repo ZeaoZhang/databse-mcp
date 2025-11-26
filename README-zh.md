@@ -11,12 +11,12 @@ Node.js MCP（Model Context Protocol）数据库服务器，为智能体提供 4
 ## 安装
 选择最合适的包：
 - 单平台二进制（~15MB，推荐）：  
-  - macOS ARM64: `npm install -g mcp-database @mcp-database/darwin-arm64`  
-  - macOS Intel: `npm install -g mcp-database @mcp-database/darwin-x64`  
-  - Linux x64: `npm install -g mcp-database @mcp-database/linux-x64`  
-  - Windows x64: `npm install -g mcp-database @mcp-database/win32-x64`
-- 全量包（含全部平台二进制，~60MB）：`npm install -g @mcp-database/full`
-- 无需安装：`npx mcp-database --help`
+  - macOS ARM64: `npm install -g @adversity/mcp-database @adversity/mcp-database-darwin-arm64`  
+  - macOS Intel: `npm install -g @adversity/mcp-database @adversity/mcp-database-darwin-x64`  
+  - Linux x64: `npm install -g @adversity/mcp-database @adversity/mcp-database-linux-x64`  
+  - Windows x64: `npm install -g @adversity/mcp-database @adversity/mcp-database-win32-x64`
+- 全量包（含全部平台二进制，~60MB）：`npm install -g @adversity/mcp-database-full`
+- 无需安装：`npx @adversity/mcp-database --help`
 
 ## 快速开始
 ### 预置配置（推荐）
@@ -26,11 +26,11 @@ POSTGRES_HOST=localhost \
 POSTGRES_DATABASE=mydb \
 POSTGRES_USER=postgres \
 POSTGRES_PASSWORD=your-password \
-mcp-database --prebuilt postgres
+npx @adversity/mcp-database --prebuilt postgres
 
 # SQLite（无需凭证）
 SQLITE_DATABASE=./my.db \
-mcp-database --prebuilt sqlite
+npx @adversity/mcp-database --prebuilt sqlite
 ```
 
 ### 自定义配置
@@ -64,7 +64,7 @@ tools:
   "mcpServers": {
     "database": {
       "command": "npx",
-      "args": ["mcp-database", "--prebuilt", "postgres"],
+      "args": ["@adversity/mcp-database", "--prebuilt", "postgres"],
       "env": {
         "POSTGRES_HOST": "localhost",
         "POSTGRES_DATABASE": "mydb",
@@ -83,7 +83,7 @@ tools:
   "servers": {
     "database": {
       "command": "npx",
-      "args": ["mcp-database", "--prebuilt", "sqlite"],
+      "args": ["@adversity/mcp-database", "--prebuilt", "sqlite"],
       "env": {
         "SQLITE_DATABASE": "./my.db"
       }

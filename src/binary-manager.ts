@@ -98,11 +98,10 @@ function getPlatformPackageName(): string {
   const arch = process.arch;
 
   const platformMap: Record<string, string> = {
-    'darwin-arm64': '@mcp-database/darwin-arm64',
-    'darwin-x64': '@mcp-database/darwin-x64',
-    'linux-arm64': '@mcp-database/linux-arm64',
-    'linux-x64': '@mcp-database/linux-x64',
-    'win32-x64': '@mcp-database/win32-x64',
+    'darwin-arm64': '@adversity/mcp-database-darwin-arm64',
+    'darwin-x64': '@adversity/mcp-database-darwin-x64',
+    'linux-x64': '@adversity/mcp-database-linux-x64',
+    'win32-x64': '@adversity/mcp-database-win32-x64',
   };
 
   return platformMap[`${platform}-${arch}`] || '';
@@ -186,7 +185,7 @@ export function findBinary(options: BinaryManagerOptions = {}): string | null {
     }
   }
 
-  // 3. 平台特定的 npm 包 (如 @mcp-database/darwin-arm64)
+  // 3. 平台特定的 npm 包 (如 @adversity/mcp-database-darwin-arm64)
   const fromPlatformPkg = findFromPlatformPackage();
   if (fromPlatformPkg) {
     return fromPlatformPkg;
@@ -278,7 +277,7 @@ Option 1: Install platform-specific package (recommended for npm users)
   npm install ${platformPackage}
 
 Option 2: Install full package with all platform binaries
-  npm install @mcp-database/full
+  npm install @adversity/mcp-database-full
 
 Option 3: Manual installation
   a. Set environment variable:

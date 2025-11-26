@@ -9,5 +9,5 @@ module.exports = {
   binaryPath: join(__dirname, 'binaries', platformDir, binaryName),
 };
 
-// Re-export everything from mcp-database
-module.exports.mcpDatabase = require('mcp-database');
+// Re-export everything from @adversity/mcp-database
+module.exports.mcpDatabase = require('@adversity/mcp-database');

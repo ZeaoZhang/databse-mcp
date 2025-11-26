@@ -37,7 +37,7 @@ for pkg_name in "${PLATFORMS[@]}"; do
     continue
   fi
 
-  echo "Publishing @mcp-database/$pkg_name..."
+  echo "Publishing @adversity/mcp-database-$pkg_name..."
 
   cd "$pkg_dir"
 
@@ -51,7 +51,7 @@ for pkg_name in "${PLATFORMS[@]}"; do
 done
 
 # 2. 发布主包
-echo "=== Publishing main package (mcp-database) ==="
+echo "=== Publishing main package (@adversity/mcp-database) ==="
 cd "$ROOT_DIR"
 
 if [ "$DRY_RUN" = "true" ]; then
@@ -63,7 +63,7 @@ fi
 echo ""
 
 # 3. 发布 full 包
-echo "=== Publishing full package (@mcp-database/full) ==="
+echo "=== Publishing full package (@adversity/mcp-database-full) ==="
 cd "$PACKAGES_DIR/full"
 
 if [ ! -d "binaries" ]; then
@@ -80,8 +80,8 @@ echo ""
 echo "Done!"
 echo ""
 echo "Published packages:"
-echo "  - mcp-database (core, ~50KB)"
-echo "  - @mcp-database/full (with all binaries, ~60MB)"
+echo "  - @adversity/mcp-database (core, ~50KB)"
+echo "  - @adversity/mcp-database-full (with all binaries, ~60MB)"
 for pkg_name in "${PLATFORMS[@]}"; do
-  echo "  - @mcp-database/$pkg_name (~15MB)"
+  echo "  - @adversity/mcp-database-$pkg_name (~15MB)"
 done
