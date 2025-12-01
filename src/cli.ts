@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * CLI entry point for mcp-database (内网版本)
+ * CLI entry point for mcp-database
  */
 
 import { parseArgs } from 'util';
@@ -91,7 +91,7 @@ async function main() {
     }
 
     if (values.version) {
-      console.log('mcp-database v0.1.0 (内网版本)');
+      console.log('mcp-database v0.2.0');
       process.exit(0);
     }
 
@@ -205,8 +205,7 @@ async function main() {
 
 function printHelp() {
   console.log(`
-mcp-database - 数据库 MCP 服务器 (内网版本)
-
+mcp-database - 数据库 MCP 服务器
 用法:
   mcp-database [选项]
 

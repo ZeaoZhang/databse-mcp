@@ -1,5 +1,5 @@
 /**
- * Binary manager for genai-toolbox binaries (内网版本 - 无外网依赖)
+ * Binary manager for genai-toolbox binaries
  *
  * 二进制查找顺序：
  * 1. CLI 参数 --binary-path
@@ -300,7 +300,7 @@ brew install mcp-toolbox
 }
 
 /**
- * Ensure binary is available (内网版本 - 不下载，只查找)
+ * Ensure binary is available
  */
 export async function ensureBinary(options: BinaryManagerOptions = {}): Promise<string> {
   const binaryPath = findBinary(options);
